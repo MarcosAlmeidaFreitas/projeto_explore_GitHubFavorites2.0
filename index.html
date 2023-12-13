@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GitHub Favorites</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <script type="module" src="src/main.js" defer></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="toggleMode">
+      <button id="toggleButton">
+        <i class="ph ph-moon"></i>
+        <i class="ph ph-sun"></i>
+      </button>
+    </div>
+    <header>
+      <h1>{&starf;} GitFav</h1>
+      <div class="search">
+        <label class="sr-only" for="input-search">Usuário do GitHub</label>
+        <input type="text" id="input-search" placeholder="Digite o GitHub username que deseja favoritar">
+        <button>&star; Favoritar</button>
+      </div>
+    </header>
+    
+    <table>
+      <thead> <!-- Usado para fazer o titulo da tabela -->
+        <tr> <!-- Linha da coluna da tabela --> 
+          <th>Usuário</th> <!-- Usado para criar coluna da tabela -->
+          <th>Projetos</th>
+          <th>Seguidores</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+</html>

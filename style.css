@@ -1,0 +1,201 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  /* Color usadas no tema claro */
+  --text-color: var(--hueWhite);
+  --hue: 266;
+  --primary-color: hsl(var(--hue), 21%, 20%);
+  --color-toggleButton: var(--hueWhite);
+  --hueWhite: #ededed;
+  background-color: #121212;
+}
+
+html.light{
+  background-color: var(--hueWhite);
+  --color-toggleButton: var(--hueWhite);
+  --text-color: var(--primary-color);
+  --color-toggleButton: var(--primary-color);
+}
+
+body{
+  font-size: 1.6rem;
+  --ff-primary: 'Poppins', sans-serif;
+}
+
+/* Todos os seletores do body recebam a font-primary */
+body *{
+  font-family: var(--ff-primary);
+}
+
+/* classe resposavel por sumir com o texto da tela mas permanecer para o leitor de tela */
+.sr-only{
+  /* Esses 4 são indispensáveis */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  /* Outras configurações */
+  clip: rect(0,0,0,0); /* Forçando uma caixa retangular com 0 em cima, em baixo e nas laterais */ 
+  /*Se caso existir uma area com texto com quebra de linha ele irá colocar somente em uma linha*/
+  white-space: nowrap; 
+  border-width: 0; /*Se caso existir um elemento com borda vai ser retirado*/
+}
+
+/* Responsavel pela parte de troca e configurações de estilos do botão de troca de tema(dark)*/
+.toggleMode{
+  position: absolute;
+  right: 6rem;
+  top: 3rem;
+}
+
+.toggleMode button{
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-toggleButton);
+  cursor: pointer;
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+  display: none;
+}
+
+#app{
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 2.5rem 0;
+}
+
+header h1{
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.search input{
+  height: 3.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem 0 0 0.4rem;
+  padding: 0 0.8rem;
+  width: 74%;
+}
+
+.search button{
+  border-radius: 0 0.5rem 0.5rem 0;
+  height: 3.2rem;
+  padding: 0 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.search button:hover{
+  filter: brightness(1.1);
+}
+
+table{
+  width: 100%;
+  /* Fazendo com que as colunas não tenham espaço de separação */
+  border-collapse: collapse;
+
+  /* Colocando sombra na tabela */
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+table *{
+  font-size: 1.4rem;
+}
+
+table th{
+  background: var(--primary-color);
+  font-weight: normal;
+  text-align: left;
+  padding: 1rem;
+  color: var(--hueWhite);
+}
+
+/* Pegando o primeiro th e aplicando redondamento de bordas */
+table th:first-child{
+  border-top-left-radius: 0.4rem;
+}
+
+/* Pegando o ultimo th e aplicando redondamento de bordas */
+table th:last-child{
+  border-top-right-radius: 0.4rem;
+}
+
+table td{
+  padding: 1.2rem;
+  text-align: left;
+}
+
+/* Colorindo todas as linhas impares */
+table tr:nth-child(odd){
+  background-color: #eee;
+}
+
+/* Colorindo todas as linhas pares */
+table tr:nth-child(even){
+  background-color: #ddd;
+}
+
+table tr{
+  color: #303030;
+}
+
+td.user img{
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+td.user a{
+  text-decoration: none;
+}
+
+td.user a:visited{
+  color: var(--primary-color);
+}
+
+td.user a p{
+  font-weight: bold;
+}
+
+.buttonRemove{
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background: none;
+  font-weight: 700;
+  color: red;
+} 

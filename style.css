@@ -55,6 +55,10 @@ body *{
   top: 3rem;
 }
 
+#spanToggleButton{
+color: var(--color-toggleButton);
+}
+
 .toggleMode button{
   background: none;
   border: none;
